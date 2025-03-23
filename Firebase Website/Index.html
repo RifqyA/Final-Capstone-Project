@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring Kepadatan Parkir di S</title>
+
+    <style>
+      /* Global styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f6fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        width: 350px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+      h1 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .data-display p {
+        font-size: 18px;
+        color: #555;
+        margin: 15px 0;
+      }
+      .data-display span {
+        font-weight: bold;
+        color: #2d98da;
+      }
+    </style>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.0.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.0.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const firebaseConfig = {
+          apiKey: "AIzaSyAj99fAXnnynODiFDjTeiDLh4vHPEbyKmg",
+          authDomain: "desprofinal-b7eb8.firebaseapp.com",
+          databaseURL: "https://desprofinal-b7eb8-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "desprofinal-b7eb8",
+          storageBucket: "desprofinal-b7eb8.firebasestorage.app",
+          messagingSenderId: "280133229328",
+          appId: "1:280133229328:web:7f81f2db462942b7d0e395",
+          measurementId: "G-QLM17ZWH34"
+        };
+        firebase.initializeApp(firebaseConfig);
+        console.log("Firebase initialized successfully");
+      });
+
+      </script>
+      <script src="app.js" defer></script>
+  
+  </head>
+  <body>
+    <div class="container">
+      <h1>Parking Lot Data</h1>
+      <div class="data-display">
+        <p>Jumlah Mobil: <span id="Jumlah"></span></p>
+        <p>Kondisi Parkir: <span id="Padat"></span></p>
+        <p>Waktu Update: <span id="Waktu"></span></p>
+      </div>
+    </div>
+  </body>
+</html>
